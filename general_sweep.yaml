@@ -1,0 +1,44 @@
+
+name: segmentation_sweep
+project: exact-segmentation
+entity: pfrwilson
+
+program: main.py
+
+method: bayes
+metric: 
+  name: best_validation_dice
+  goal: maximize
+
+parameters: 
+    
+  module.optimizer_name:
+    values: 
+      - 'sgd'
+      - 'adam'
+  
+  module.dice_loss_weight:
+    distribution: uniform
+    min: 0
+    max: 1
+
+  module.lr:
+    distribution: log_uniform_values
+    min: 1e-7
+    max: 1e-2
+  
+  trainer.accumulate_grad_batches: 
+    values: [1, 2, 3, 4, 8, 16]
+  
+  module.use_augmentations: 
+    values: [True, False]
+  
+  module.use_anatomical_location_embeddings: 
+    values: [True, False]
+  
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}

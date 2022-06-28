@@ -1,0 +1,12 @@
+checkpoints:
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/13-30-40/0/scratch/18en9cuh/checkpoints/epoch=16-step=714.ckpt
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/13-30-40/1/scratch/1vtbau3w/checkpoints/epoch=20-step=882.ckpt
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/13-30-40/2/scratch/1lg3cmk2/checkpoints/epoch=13-step=588.ckpt
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/13-30-40/3/scratch/20gu8ewm/checkpoints/epoch=28-step=1218.ckpt
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/13-30-40/4/scratch/313x6ghj/checkpoints/epoch=23-step=1008.ckpt
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/13-30-40/5/scratch/1rasorwd/checkpoints/epoch=18-step=798.ckpt
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/15-50-53/0/scratch/hl9s6fjs/checkpoints/epoch=18-step=798.ckpt
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/15-50-53/1/scratch/sr6fp9dd/checkpoints/epoch=16-step=714.ckpt
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/15-50-53/2/scratch/1ieedy8w/checkpoints/epoch=9-step=420.ckpt
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/15-50-53/3/scratch/39kzmyn2/checkpoints/epoch=23-step=1008.ckpt
+- /home/paulw/projects/exact-segmentation/multirun/2022-06-27/15-50-53/4/scratch/3avcnjs2/checkpoints/epoch=17-step=756.ckpt

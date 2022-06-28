@@ -1,0 +1,69 @@
+
+seed: 0
+
+score_threshold_for_checkpoint: 0.87
+checkpoint_file: /home/paulw/projects/exact-segmentation/checkpoints.yaml
+
+hydra: 
+  run: 
+    dir: /mnt/data2/paul/output/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  #multirun: 
+  #  dir: /mnt/data2/paul/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S} 
+
+general:
+  name: null
+  project: scratch
+  entity: pfrwilson
+
+module: 
+  root: null
+  use_anatomical_location_embeddings: True
+  dice_loss_weight: 0.035
+  use_augmentations: True
+  equalize_hist: False
+  random_rotate: False
+  grid_distortion: False
+  horizontal_flip: False
+  gaussian_blur: True
+  random_brightness: True
+  to_tensor: True
+  out_size: [256, 256]
+  batch_size: 4
+  num_workers: 8
+  optimizer_name: "adam"
+  lr: 0.0001
+  num_epochs: 100
+  scheduler: "cosine"
+
+logger: 
+  _target_: pytorch_lightning.loggers.WandbLogger
+  log_model: True
+
+trainer: 
+  _target_: pytorch_lightning.Trainer
+  max_epochs: 100 
+  accelerator: gpu
+  accumulate_grad_batches: 3
+  devices: [0]
+
+callbacks: 
+  log_masks:
+    _target_: src.callbacks.LogMasksCallback
+    num_batches_to_log: 10
+
+  checkpoint: 
+    _target_: pytorch_lightning.callbacks.ModelCheckpoint
+    monitor: val_dice
+    mode: max
+
+  early_stopping:
+    _target_: pytorch_lightning.callbacks.EarlyStopping
+    monitor: val_dice
+    patience: 5
+    mode: max
+
+  model_summary:
+    _target_: pytorch_lightning.callbacks.RichModelSummary
+    max_depth: -1
+
+  

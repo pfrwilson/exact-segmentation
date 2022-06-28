@@ -1,0 +1,6 @@
+checkpoints:
+- /med-i_data/exact_prostate_segemnts/new_segmentations_paul/model_0--epoch=20-step=882.ckpt
+- /med-i_data/exact_prostate_segemnts/new_segmentations_paul/model_1--epoch=13-step=588.ckpt
+- /med-i_data/exact_prostate_segemnts/new_segmentations_paul/model_2--epoch=23-step=1008.ckpt
+- /med-i_data/exact_prostate_segemnts/new_segmentations_paul/model_3--epoch=23-step=1008.ckpt
+- /med-i_data/exact_prostate_segemnts/new_segmentations_paul/model_4--epoch=18-step=798.ckpt

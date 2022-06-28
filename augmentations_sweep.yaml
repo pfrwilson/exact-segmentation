@@ -1,0 +1,33 @@
+
+name: augmentations-sweep
+project: exact-segmentation
+entity: pfrwilson
+
+program: main.py
+
+method: bayes
+metric: 
+  name: best_validation_dice
+  goal: maximize
+
+parameters: 
+  
+  module.equalize_hist: 
+    values: [True, False]
+  module.random_rotate:
+    values: [True, False]
+  module.grid_distortion: 
+    values: [True, False]
+  module.horizontal_flip: 
+    values: [True, False]
+  module.gaussian_blur: 
+    values: [True, False]
+  module.random_brightness: 
+    values: [True, False]
+
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}

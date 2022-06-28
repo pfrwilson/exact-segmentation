@@ -1,0 +1,11 @@
+/outputs
+/wandb
+*.ckpt
+local_checkpoints.yaml
+/multirun
+probs.npy
+bmode.npy
+mask.png
+label.png
+__pycache__
+*.pyc
